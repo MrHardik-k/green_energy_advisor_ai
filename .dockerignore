@@ -1,0 +1,20 @@
+# Node.js dependencies
+node_modules
+
+# Logs
+*.log
+
+# Git files
+.git
+.gitignore
+
+# Environment variables
+.env
+
+# Build output (frontend)
+frontend/build
+
+# Editor settings
+.vscode
+.idea
+.DS_Store
