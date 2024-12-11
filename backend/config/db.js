@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
-// zd38WgZuGChYGxuI
-// mongodb+srv://hardikkanzariya091:zd38WgZuGChYGxuI@cluster0.iokmg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+require('dotenv').config();
+// greenenergy69        pass: wewillwin3lakh
+// MONGO_URI=mongodb+srv://greenenergy69:wewilwin3lakh@<cluster-name>.mongodb.net/<database-name>?retryWrites=true&w=majority  
 export const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGODB_URI);
