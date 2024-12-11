@@ -14,7 +14,7 @@ dist-ssr
 
 node_modules
 .env
-
+backend/keys
 
 # Editor directories and files
 .vscode/*
