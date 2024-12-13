@@ -1,0 +1,60 @@
+{
+  "appliances": [
+    { "name": "Incandescent Bulbs", "wattage": 60, "hoursPerDay": 6 },
+    {
+      "name": "Single Fluorescent Tube light with conventional choke",
+      "wattage": 55,
+      "hoursPerDay": 6
+    },
+    { "name": "Night Lamp", "wattage": 15, "hoursPerDay": 8 },
+    { "name": "Fans", "wattage": 80, "hoursPerDay": 18 },
+    { "name": "Air Coolers", "wattage": 120, "hoursPerDay": 6 },
+    {
+      "name": "Air Conditioners - Window (1.0 TR)",
+      "wattage": 1500,
+      "hoursPerDay": 6
+    },
+    {
+      "name": "Air Conditioners - Window (1.5 TR)",
+      "wattage": 2000,
+      "hoursPerDay": 6
+    },
+    {
+      "name": "Air Conditioners - Split (1.0 TR)",
+      "wattage": 2000,
+      "hoursPerDay": 6
+    },
+    {
+      "name": "Air Conditioners - Split(1.5 TR)",
+      "wattage": 2500,
+      "hoursPerDay": 6
+    },
+    { "name": "Refrigerator (286 Litres)", "wattage": 500, "hoursPerDay": 18 },
+    { "name": "Mixer/Blender", "wattage": 500, "hoursPerDay": 0.5 },
+    { "name": "Toaster", "wattage": 1000, "hoursPerDay": 0.5 },
+    { "name": "Induction cooker", "wattage": 1000, "hoursPerDay": 1 },
+    { "name": "OTG", "wattage": 800, "hoursPerDay": 0.5 },
+    { "name": "Microwave Oven", "wattage": 1200, "hoursPerDay": 1 },
+    { "name": "Electric Kettle", "wattage": 2000, "hoursPerDay": 0.2 },
+    {
+      "name": "Water heater-Instant Type",
+      "wattage": 3000,
+      "hoursPerDay": 0.3
+    },
+    { "name": "Water heater-Storage type", "wattage": 1500, "hoursPerDay": 1 },
+    { "name": "Immersion rod", "wattage": 750, "hoursPerDay": 1 },
+    { "name": "Electric Iron", "wattage": 1000, "hoursPerDay": 0.15 },
+    { "name": "Mosquito Repellent", "wattage": 5, "hoursPerDay": 12 },
+    { "name": "Vacuum Cleaner", "wattage": 400, "hoursPerDay": 0.5 },
+    { "name": "Washing Machine", "wattage": 500, "hoursPerDay": 0.5 },
+    { "name": "TV", "wattage": 120, "hoursPerDay": 6 },
+    { "name": "Audio system", "wattage": 120, "hoursPerDay": 1 },
+    { "name": "Mobile Charger", "wattage": 22, "hoursPerDay": 0.5 },
+    { "name": "Computer PC", "wattage": 300, "hoursPerDay": 6 },
+    { "name": "Computer - Laptop", "wattage": 70, "hoursPerDay": 6 },
+    { "name": "Hair Dryer", "wattage": 1000, "hoursPerDay": 0.25 },
+    { "name": "Water pump (1.0 HP)", "wattage": 746, "hoursPerDay": 3 },
+    { "name": "Water pump (2.0 HP)", "wattage": 1492, "hoursPerDay": 3 },
+    { "name": "Water pump (3.0 HP)", "wattage": 2238, "hoursPerDay": 3 }
+  ]
+}
