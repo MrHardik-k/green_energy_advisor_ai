@@ -356,14 +356,40 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
-      document
-        .getElementById("energyForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          document.getElementById("resultsSection").style.display = "block";
-        });
-    </script>
-    <script>
+      let size = 0;
+      function submit() {
+        event.preventDefault();
+        let data = {};
+        data["appliances"] = [];
+        for (let i = 0; i < size; i++) {
+          let name = document.getElementById("lab-" + i);
+          let in1 = document.getElementsByName("input1-" + i)[0];
+          let in2 = document.getElementsByName("input2-" + i)[0];
+          let in3 = document.getElementsByName("input3-" + i)[0];
+          // check if in3 has value greater than 0
+          if (in3.value > 0) {
+            data["appliances"].push({
+              name: name.textContent,
+              wattage: in1.value,
+              hoursPerDay: in2.value,
+              noOfAppliances: in3.value,
+            });
+          }
+        }
+        console.log(data);
+        const pincode = sessionStorage.getItem("pincode");
+        let newData = {};
+        newData["data"] = data;
+        if (pincode) {
+          const jsonData = JSON.parse(pincode); // Parse the JSON string back into an object
+          newData["pincode"] = pincode;
+          sessionStorage.setItem("data", JSON.stringify(newData));
+          window.location.href = `userDashboard.html`;
+        } else {
+          sessionStorage.setItem("sharedData", JSON.stringify(data));
+          window.location.href = `userSolarPotentialCalculator.html`;
+        }
+      }
       async function getAppliances(params) {
         try {
           const form = document.getElementById("energyForm");
@@ -374,16 +400,16 @@
             }
           );
           const appliances = await data.json();
-
+          size = appliances["appliances"].length;
           appliances["appliances"].forEach((ele, index) => {
             const formGroupHTML = `
-	               <div class="form-group">
-                  <label for="main-textbox" style="font-size:17px">${ele.name}</label><br>
+                <div class="form-group">
+                  <label id ="lab-${index}" for="main-textbox" style="font-size:17px">${ele.name}</label><br>
                 </div>
                 <div class="input-row">
-                  <input type="text" name="input1-1" placeholder="Wattage" value="${ele.wattage}">
-                  <input type="text" name="input1-2" placeholder="Average Hours Per Day" value="${ele.wattage}">
-                  <input type="text" name="input1-3" placeholder="No Of Appliances" value="0">
+                  <input type="text" name="input1-${index}" placeholder="Wattage" value="${ele.wattage}">
+                  <input type="text" name="input2-${index}" placeholder="Average Hours Per Day" value="${ele.wattage}">
+                  <input type="text" name="input3-${index}" placeholder="No Of Appliances" value="0">
                 </div>`;
 
             const div = document.createElement("div");
@@ -396,6 +422,7 @@
           submitButton.type = "submit";
           submitButton.className = "submit-btn";
           submitButton.textContent = "Get My Recommendations";
+          submitButton.addEventListener("click", submit);
           form.appendChild(submitButton);
         } catch (error) {
           console.log(error);

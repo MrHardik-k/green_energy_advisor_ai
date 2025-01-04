@@ -195,9 +195,6 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Topbar start -->
-    <!-- Topbar end -->
-
     <!-- Navbar Start -->
     <div id="mynavbar"></div>
 
@@ -303,6 +300,25 @@
       // Call the loadContent function when the page loads
       loadContent();
     </script>
+    <script>
+      const data = sessionStorage.getItem("sharedData");
+      function submit(params) {
+        let pincode = document.getElementById("pincode").value;
+        let newData = {};
+        newData["pincode"] = pincode;
+        if (data) {
+          const jsonData = JSON.parse(data); // Parse the JSON string back into an object
+          newData["data"] = jsonData;
+          sessionStorage.setItem("data", JSON.stringify(newData));
+          window.location.href = `userDashboard.html`;
+        } else {
+          sessionStorage.setItem("pincode", JSON.stringify(data));
+          window.location.href = `userEnergyCon.html`;
+        }
+      }
+      let submitButton = document.getElementById("submit");
+      submitButton.addEventListener("click", submit);
+    </script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/wow.min.js"></script>
@@ -315,73 +331,5 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
-      const pincodeInput = document.getElementById("pincode");
-      const submitButton = document.getElementById("submit");
-      const loadingDiv = document.getElementById("loading");
-      const resultsDiv = document.getElementById("results");
-
-      function validatePincode(pincode) {
-        return /^\d{6}$/.test(pincode);
-      }
-
-      function calculatePanels(area) {
-        return Math.ceil(area / 17.5);
-      }
-
-      async function fetchSolarRequirements(pincode) {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            const area = Math.floor(Math.random() * 500 + 300);
-            const cost = Math.floor(Math.random() * 500000 + 300000);
-            resolve({ area, cost });
-          }, 1500);
-        });
-      }
-
-      submitButton.addEventListener("click", async () => {
-        const pincode = pincodeInput.value.trim();
-
-        if (!validatePincode(pincode)) {
-          alert("Please enter a valid 6-digit pincode");
-          return;
-        }
-
-        loadingDiv.style.display = "block";
-        resultsDiv.classList.remove("visible");
-        submitButton.disabled = true;
-
-        try {
-          const data = await fetchSolarRequirements(pincode);
-          const numPanels = calculatePanels(data.area);
-          resultsDiv.innerHTML = `
-	                    <div class="result-item">
-	                        <h4>Solar Panels Needed</h4>
-	                        <p>You need <strong>${numPanels} panels</strong> (300W each) to meet 100% of your energy needs.</p>
-	                    </div>
-	                    <div class="result-item">
-	                        <h4>Required Area</h4>
-	                        <p>Approx. <strong>${
-                            data.area
-                          } sq. ft.</strong> is needed for installation.</p>
-	                    </div>
-	                    <div class="result-item">
-	                        <h4>Estimated Cost</h4>
-	                        <p>Total investment: <strong>₹${data.cost.toLocaleString()}</strong></p>
-	                    </div>
-	                `;
-          resultsDiv.classList.add("visible");
-        } catch (error) {
-          alert("Failed to fetch recommendations. Please try again.");
-        } finally {
-          loadingDiv.style.display = "none";
-          submitButton.disabled = false;
-        }
-      });
-
-      pincodeInput.addEventListener("input", (e) => {
-        e.target.value = e.target.value.replace(/\D/g, "");
-      });
-    </script>
   </body>
 </html>
