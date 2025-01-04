@@ -4,9 +4,15 @@ import admin from "../config/auth.js";
 export const registerUser = async (req, res) => {
   const { token } = req.body;
   try {
-    const decodedToken = await admin.auth().verifyIdToken(token);
-    const { uid, name, email, picture } = decodedToken;
-    let user = await UserCreds.findOne({ uid });
+    // const decodedToken = await admin.auth().verifyIdToken(token);
+    // const { uid, name, email, picture } = decodedToken;
+    const { uid, name, email, picture } = req.body;
+    let user;
+    try {
+      user = await UserCreds.findOne({ uid });
+    } catch (error) {
+      console.log(error);
+    }
 
     if (!user) {
       // If user does not exist, create a new one

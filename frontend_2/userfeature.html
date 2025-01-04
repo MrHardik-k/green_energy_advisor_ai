@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Radient Future Ai Features</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="css/all.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <!-- Navbar Start -->
+    <div id="mynavbar"></div>
+    <!-- Navbar End -->
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 600px"
+        >
+          <h6 class="text-primary">Our Services</h6>
+          <h1 class="mb-4">We Are Pioneers In The World Of Renewable Energy</h1>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded overflow-hidden">
+              <img class="img-fluid" src="images/img-600x400-1.jpg" alt="" />
+              <div class="position-relative p-4 pt-0">
+                <div class="service-icon">
+                  <i class="fa fa-solar-panel fa-3x"></i>
+                </div>
+                <h4 class="mb-3">Energy consumption Prediction</h4>
+                <p>
+                  Leverage predictive analytics to forecast your energy usage
+                  trends. Understand your consumption patterns, identify peak
+                  hours, and make informed decisions to reduce waste and
+                  optimize efficiency.
+                </p>
+                <a class="small fw-medium" href=""
+                  >Read More<i class="fa fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded overflow-hidden">
+              <img class="img-fluid" src="images/img-600x400-2.jpg" alt="" />
+              <div class="position-relative p-4 pt-0">
+                <div class="service-icon">
+                  <i class="fa fa-wind fa-3x"></i>
+                </div>
+                <h4 class="mb-3">Weather Driven Insights</h4>
+                <p>
+                  Maximize your renewable energy potential with real-time
+                  weather analysis. Our system provides actionable insights
+                  based on local climate conditions, helping you optimize solar
+                  panel performance and energy storage.
+                </p>
+                <a class="small fw-medium" href=""
+                  >Read More<i class="fa fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item rounded overflow-hidden">
+              <img class="img-fluid" src="images/img-600x400-3.jpg" alt="" />
+              <div class="position-relative p-4 pt-0">
+                <div class="service-icon">
+                  <i class="fa fa-lightbulb fa-3x"></i>
+                </div>
+                <h4 class="mb-3">Carbon Footprint Estimations</h4>
+                <p>
+                  Track and reduce your environmental impact with comprehensive
+                  carbon footprint tracking. Visualize your emissions, receive
+                  personalized reduction strategies, and contribute to a
+                  sustainable future.
+                </p>
+                <a class="small fw-medium" href=""
+                  >Read More<i class="fa fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded overflow-hidden">
+              <img class="img-fluid" src="images/img-600x400-4.jpg" alt="" />
+              <div class="position-relative p-4 pt-0">
+                <div class="service-icon">
+                  <i class="fa fa-solar-panel fa-3x"></i>
+                </div>
+                <h4 class="mb-3">ROI Charts and Analysis</h4>
+                <p>
+                  Detailed financial visualization of your green energy
+                  investments. Interactive charts showcase potential savings,
+                  return on investment, and long-term financial benefits of
+                  sustainable energy solutions.
+                </p>
+                <a class="small fw-medium" href=""
+                  >Read More<i class="fa fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded overflow-hidden">
+              <img class="img-fluid" src="images/img-600x400-5.jpg" alt="" />
+              <div class="position-relative p-4 pt-0">
+                <div class="service-icon">
+                  <i class="fa fa-wind fa-3x"></i>
+                </div>
+                <h4 class="mb-3">Energy Storage Optimation</h4>
+                <p>
+                  Get the most out of your energy storage systems with advanced
+                  optimization tools. Monitor battery performance, prioritize
+                  energy usage, and ensure seamless power availability during
+                  peak hours or outages.
+                </p>
+                <a class="small fw-medium" href=""
+                  >Read More<i class="fa fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item rounded overflow-hidden">
+              <img class="img-fluid" src="images/img-600x400-6.jpg" alt="" />
+              <div class="position-relative p-4 pt-0">
+                <div class="service-icon">
+                  <i class="fa fa-lightbulb fa-3x"></i>
+                </div>
+                <h4 class="mb-3">Personalized Energy Goals</h4>
+                <p>
+                  Set, track, and achieve your energy efficiency goals with
+                  customized action plans. Our system provides step-by-step
+                  recommendations tailored to your household or business needs,
+                  ensuring measurable progress towards sustainability.
+                </p>
+                <a class="small fw-medium" href=""
+                  >Read More<i class="fa fa-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div id="myfooter"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a
+      href="#"
+      class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script>
+      // Create an async function to load header and footer
+      async function loadContent() {
+        // Fetch the header and footer HTML
+        const headerResponse = await fetch("assets/navbar.html");
+        const footerResponse = await fetch("assets/footer.html");
+
+        // Get the text content of both
+        const headerContent = await headerResponse.text();
+        const footerContent = await footerResponse.text();
+
+        // Insert the content into the respective divs
+        document.getElementById("mynavbar").innerHTML = headerContent;
+        document.getElementById("myfooter").innerHTML = footerContent;
+      }
+
+      // Call the loadContent function when the page loads
+      loadContent();
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/easing.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/counterup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

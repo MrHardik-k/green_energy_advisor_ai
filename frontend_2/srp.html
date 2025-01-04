@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Radiant Future AI - Solar Calculator</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+
+	<!-- Template CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+	<style>
+		body {
+			font-family: 'Poppins', sans-serif;
+			background-color: #f1f8f4;
+		}
+
+		.calculator-section {
+			position: relative;
+			padding: 6rem 0;
+			background: linear-gradient(rgba(46, 125, 50, 0.1), rgba(46, 125, 50, 0.05));
+		}
+
+		.calculator-container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 3rem;
+			background: #ffffff;
+			border-radius: 15px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		}
+
+		.calculator-header {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		.calculator-header h2 {
+			font-size: 2.5rem;
+			color: #2E7D32;
+			margin-bottom: 1rem;
+		}
+
+		.calculator-header p {
+			color: #555;
+			font-size: 1.1rem;
+		}
+
+		.pincode-input {
+			height: 55px;
+			font-size: 1.2rem;
+			border: 2px solid #e0e0e0;
+			margin-bottom: 20px;
+			border-radius: 10px;
+			padding: 0 20px;
+			width: 94%;
+			transition: all 0.3s;
+		}
+
+		.pincode-input:focus {
+			border-color: #2E7D32;
+			box-shadow: 0 0 8px rgba(46, 125, 50, 0.3);
+		}
+
+		.calc-btn {
+			width: 100%;
+			height: 55px;
+			font-size: 1.2rem;
+			font-weight: 600;
+			background: #2E7D32;
+			color: #fff;
+			border: none;
+			border-radius: 10px;
+			transition: all 0.3s;
+		}
+
+		.calc-btn:hover {
+			background: #1b5e20;
+			transform: translateY(-2px);
+		}
+
+		.results-container {
+			margin-top: 2rem;
+			padding: 2rem;
+			background: #e8f5e9;
+			border-radius: 10px;
+			opacity: 0;
+			transform: translateY(20px);
+			transition: all 0.5s ease-in-out;
+		}
+
+		.results-container.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.result-item {
+			margin-bottom: 1.5rem;
+		}
+
+		.result-item h4 {
+			font-size: 1.3rem;
+			font-weight: 600;
+			color: #2E7D32;
+		}
+
+		.result-item p {
+			font-size: 1.1rem;
+			color: #444;
+		}
+
+		.loading {
+			text-align: center;
+			margin: 2rem 0;
+			display: none;
+		}
+
+		.loading::after {
+			content: '';
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			border: 4px solid #f3f3f3;
+			border-top: 4px solid #2E7D32;
+			border-radius: 50%;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<section class="calculator-section">
+		<div class="calculator-container">
+			<div class="calculator-header">
+				<h2>Solar Calculator</h2>
+				<p>Get instant solar panel recommendations based on your location</p>
+			</div>
+
+			<input type="text" id="pincode" class="pincode-input" placeholder="Enter your 6-digit pincode" maxlength="6">
+			<button id="submit" class="btn calc-btn mt-3">Calculate Requirements</button>
+
+			<div class="loading" id="loading"></div>
+			<div class="results-container" id="results"></div>
+		</div>
+	</section>
+
+	<script>
+		const pincodeInput = document.getElementById('pincode');
+		const submitButton = document.getElementById('submit');
+		const loadingDiv = document.getElementById('loading');
+		const resultsDiv = document.getElementById('results');
+
+		function validatePincode(pincode) {
+			return /^\d{6}$/.test(pincode);
+		}
+
+		function calculatePanels(area) {
+			return Math.ceil(area / 17.5);
+		}
+
+		async function fetchSolarRequirements(pincode) {
+			return new Promise((resolve) => {
+				setTimeout(() => {
+					const area = Math.floor(Math.random() * 500 + 300);
+					const cost = Math.floor(Math.random() * 500000 + 300000);
+					resolve({ area, cost });
+				}, 1500);
+			});
+		}
+
+		submitButton.addEventListener('click', async () => {
+			const pincode = pincodeInput.value.trim();
+
+			if (!validatePincode(pincode)) {
+				alert('Please enter a valid 6-digit pincode');
+				return;
+			}
+
+			loadingDiv.style.display = 'block';
+			resultsDiv.classList.remove('visible');
+			submitButton.disabled = true;
+
+			try {
+				const data = await fetchSolarRequirements(pincode);
+				const numPanels = calculatePanels(data.area);
+				resultsDiv.innerHTML = `
+                    <div class="result-item">
+                        <h4>Solar Panels Needed</h4>
+                        <p>You need <strong>${numPanels} panels</strong> (300W each) to meet 100% of your energy needs.</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Required Area</h4>
+                        <p>Approx. <strong>${data.area} sq. ft.</strong> is needed for installation.</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Estimated Cost</h4>
+                        <p>Total investment: <strong>₹${data.cost.toLocaleString()}</strong></p>
+                    </div>
+                `;
+				resultsDiv.classList.add('visible');
+			} catch (error) {
+				alert('Failed to fetch recommendations. Please try again.');
+			} finally {
+				loadingDiv.style.display = 'none';
+				submitButton.disabled = false;
+			}
+		});
+
+		pincodeInput.addEventListener('input', (e) => {
+			e.target.value = e.target.value.replace(/\D/g, '');
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Radient future AI</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+
+	<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="icon">
+
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+		rel="stylesheet">
+
+	<!-- Icon Font Stylesheet -->
+	<link href="css/all.min.css" rel="stylesheet">
+	<link href="css/bootstrap-icons.css" rel="stylesheet">
+
+	<!-- Libraries Stylesheet -->
+	<link href="css/animate.min.css" rel="stylesheet">
+	<link href="css/owl.carousel.min.css" rel="stylesheet">
+	<link href="css/lightbox.min.css" rel="stylesheet">
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Template Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Spinner Start -->
+	<div id="spinner"
+		class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+		<div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- Spinner End -->
+
+	<!-- Navbar Start -->
+	<div id="mynavbar"></div>
+	<!-- Navbar End -->
+
+
+	<!-- Carousel Start -->
+	<div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+			<div class="owl-carousel-item position-relative" data-dot="<img src='img/carousel-2.jpg'>">
+				<img class="img-fluid" src="images/homewall.jpg" alt="" style="width: 100%;">
+				<div class="owl-carousel-inner">
+					<div class="container">
+						<div class="row justify-content-start">
+							<div class="col-10 col-lg-8">
+								<!-- <h1 class="display-2 text-white animated slideInDown">Smart Solar Solutions for a Sustainable Future -->
+								<!-- </h1> -->
+								<!-- <p class="fs-5 fw-medium text-white mb-4 pb-3">Discover innovative, sustainable, and personalized energy
+									solutions tailored to your needs, empowering a brighter,
+									greener future and driving meaningful change toward a more eco-friendly planet.</p> -->
+									<!-- <a href="" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Read More</a> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	<!-- Carousel End -->
+
+
+	<!-- Feature Start -->
+	<!-- Feature Start -->
+	<div class="container-xxl py-5">
+		<div class="container">
+			<div class="row g-5">
+				<!-- Feature 1 -->
+				<div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+					<div class="d-flex align-items-center mb-4">
+						<div class="btn-lg-square bg-primary rounded-circle me-3">
+							<i class="fa fa-bolt text-white"></i>
+						</div>
+						<!-- <h1 class="mb-0" data-toggle="counter-up">1000</h1> -->
+					</div>
+					<h5 class="mb-3">Personalized Recommendations</h5>
+					<span>AI-powered solutions tailored to your unique energy needs.</span>
+				</div>
+				<!-- Feature 2 -->
+				<div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+					<div class="d-flex align-items-center mb-4">
+						<div class="btn-lg-square bg-primary rounded-circle me-3">
+							<i class="fa fa-chart-line text-white"></i>
+						</div>
+						<!-- <h1 class="mb-0" data-toggle="counter-up">2000</h1> -->
+					</div>
+					<h5 class="mb-3">Cost & ROI Analysis</h5>
+					<span>Understand your savings and returns over time with visual insights.</span>
+				</div>
+				<!-- Feature 3 -->
+				<div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+					<div class="d-flex align-items-center mb-4">
+						<div class="btn-lg-square bg-primary rounded-circle me-3">
+							<i class="fa fa-cubes text-white"></i>
+						</div>
+						<!-- <h1 class="mb-0" data-toggle="counter-up">3000</h1> -->
+					</div>
+					<h5 class="mb-3">3D Rooftop Simulation</h5>
+					<span>Visualize solar potential with interactive 3D models.</span>
+				</div>
+				<!-- Feature 4 -->
+				<div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+					<div class="d-flex align-items-center mb-4">
+						<div class="btn-lg-square bg-primary rounded-circle me-3">
+							<i class="fa fa-leaf text-white"></i>
+						</div>
+						<!-- <h1 class="mb-0" data-toggle="counter-up">20</h1> -->
+					</div>
+					<h5 class="mb-3">Gamification</h5>
+					<span>Earn rewards and track progress as you save energy.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Feature End -->
+
+	<!-- Feature Start -->
+
+
+	<!-- About Start -->
+	<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+		<div class="container about px-lg-0">
+			<div class="row g-0 mx-lg-0">
+				<!-- Image Section -->
+				<div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+					<div class="position-relative h-100">
+						<img class="position-absolute img-fluid w-100 h-100" src="images/about.jpg" style="object-fit: cover;"
+							alt="About Us">
+					</div>
+				</div>
+				<!-- Text Section -->
+				<div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+					<div class="p-lg-5 pe-lg-0">
+						<h6 class="text-primary">About Us</h6>
+						<h1 class="mb-4">Empowering Green Choices with AI-Driven Insights</h1>
+						<p>We are dedicated to revolutionizing energy solutions by making sustainable energy accessible and
+							efficient for everyone
+							through cutting-edge AI technology.
+						</p>
+
+						<p><i class="fa fa-check-circle text-primary me-3"></i>Personalized recommendations for your energy needs.
+						</p>
+						<p><i class="fa fa-check-circle text-primary me-3"></i>Energy-saving insights driven by real-time data.</p>
+						<p><i class="fa fa-check-circle text-primary me-3"></i>Seamless planning with advanced solar simulations.
+						</p>
+
+						<a href="personalized-recommendations.html" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Discover Our
+							Solutions</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- About Us Section End -->
+
+	<!-- About End -->
+
+
+
+	<!-- Feature Start -->
+	<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+		<div class="container feature px-lg-0">
+			<div class="row g-0 mx-lg-0">
+				<!-- Feature Text Section -->
+				<div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+					<div class="p-lg-5 ps-lg-0">
+						<h6 class="text-primary">Why Choose Us!</h6>
+						<h1 class="mb-4">Complete Commercial & Residential Solar Systems</h1>
+						<p class="mb-4 pb-2">
+							Experience unmatched solar energy solutions for both commercial and residential spaces.
+							Our systems are designed for efficiency, sustainability, and reliability to power your future.
+						</p>
+						<div class="row g-4">
+							<!-- Feature 1 -->
+							<div class="col-6">
+								<div class="d-flex align-items-center">
+									<div class="btn-lg-square bg-primary rounded-circle">
+										<i class="fa fa-check text-white"></i>
+									</div>
+									<div class="ms-4">
+										<p class="mb-0">Quality</p>
+										<h5 class="mb-0">Services</h5>
+									</div>
+								</div>
+							</div>
+							<!-- Feature 2 -->
+							<div class="col-6">
+								<div class="d-flex align-items-center">
+									<div class="btn-lg-square bg-primary rounded-circle">
+										<i class="fa fa-user-check text-white"></i>
+									</div>
+									<div class="ms-4">
+										<p class="mb-0">Expert</p>
+										<h5 class="mb-0">Workers</h5>
+									</div>
+								</div>
+							</div>
+							<!-- Feature 3 -->
+							<div class="col-6">
+								<div class="d-flex align-items-center">
+									<div class="btn-lg-square bg-primary rounded-circle">
+										<i class="fa fa-drafting-compass text-white"></i>
+									</div>
+									<div class="ms-4">
+										<p class="mb-0">Free</p>
+										<h5 class="mb-0">Consultation</h5>
+									</div>
+								</div>
+							</div>
+							<!-- Feature 4 -->
+							<div class="col-6">
+								<div class="d-flex align-items-center">
+									<div class="btn-lg-square bg-primary rounded-circle">
+										<i class="fa fa-headphones text-white"></i>
+									</div>
+									<div class="ms-4">
+										<p class="mb-0">Customer</p>
+										<h5 class="mb-0">Support</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Image Section -->
+				<div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+					<div class="position-relative h-100">
+						<img class="position-absolute img-fluid w-100 h-100" src="images/feature.jpg" style="object-fit: cover;"
+							alt="Solar System Features">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Feature End -->
+
+
+	<!-- Solar Solutions Start -->
+	<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+		<div class="container quote px-lg-0">
+			<div class="row g-0 mx-lg-0">
+				<div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+					<div class="position-relative h-100">
+						<img class="position-absolute img-fluid w-100 h-100" src="images/quote.jpg" style="object-fit: cover;"
+							alt="">
+					</div>
+				</div>
+				<div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+					<div class="p-lg-5 pe-lg-0">
+						<h6 class="text-primary">Solar Solutions Just for You</h6>
+						<h1 class="mb-4">Request Your Personalized Solar Quote Today</h1>
+						<p class="mb-4 pb-2">
+							Join us in creating a brighter, more sustainable future with our cutting-edge solar solutions. Whether
+							you're a
+							homeowner or a business, we specialize in designing efficient, reliable, and cost-effective solar energy
+							systems that
+							allow you to tap into the limitless power of the sun, reduce energy costs, and contribute to a cleaner
+							planet
+						</p>
+						<form>
+							<div class="row g-3">
+								<div class="col-12 col-sm-6">
+									<input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+								</div>
+								<div class="col-12 col-sm-6">
+									<input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+								</div>
+								<div class="col-12 col-sm-6">
+									<input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
+								</div>
+								<div class="col-12 col-sm-6">
+									<select class="form-select border-0" style="height: 55px;">
+										<option selected="">Select A Service</option>
+										<option value="1">Residential Solar Installation</option>
+										<option value="2">Energy Efficiency Consultation</option>
+										</option>
+										<option value="3">Maintenance & Repairs</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<textarea class="form-control border-0" placeholder="Special Note"></textarea>
+								</div>
+								<div class="col-12">
+									<button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Solar Solutions End -->
+
+
+	<!-- Cients Testimonial Start -->
+	<div class="container-xxl py-5">
+		<div class="container">
+			<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+				<h1 class="mb-4">What Our Clients Say About Our Solar Solutions!</h1>
+			</div>
+			<div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+				<div class="testimonial-item text-center">
+					<div class="testimonial-img position-relative">
+						<img class="img-fluid rounded-circle mx-auto mb-5"
+							src="https://i.pinimg.com/736x/cb/78/2b/cb782bd9da27e7b6dcd7974d2bb3a42e.jpg">
+						<div class="btn-square bg-primary rounded-circle">
+							<i class="fa fa-quote-left text-white"></i>
+						</div>
+					</div>
+					<div class="testimonial-text text-center rounded p-4">
+						<p>"The solar system installed by this company has been a game changer for our business. Not only have we
+							reduced our energy bills significantly, but we’re also contributing to a greener environment. Highly
+							recommend their expert services!"</p>
+						<h5 class="mb-1">Aarav Sharma</h5>
+						<span class="fst-italic">Director, Sun Power Enterprises</span>
+					</div>
+				</div>
+				<div class="testimonial-item text-center">
+					<div class="testimonial-img position-relative">
+						<img class="img-fluid rounded-circle mx-auto mb-5"
+							src="https://i.pinimg.com/736x/8c/c6/a0/8cc6a0d60024ddde63f9885001c0146b.jpg">
+						<div class="btn-square bg-primary rounded-circle">
+							<i class="fa fa-quote-left text-white"></i>
+						</div>
+					</div>
+					<div class="testimonial-text text-center rounded p-4">
+						<p>"We were impressed with the seamless installation and the efficiency of our new solar system. It has not
+							only helped us cut down on costs but has also made us feel proud of contributing to a sustainable future!"
+						</p>
+						<h5 class="mb-1">Neha Verma</h5>
+						<span class="fst-italic">Homeowner</span>
+					</div>
+				</div>
+				<div class="testimonial-item text-center">
+					<div class="testimonial-img position-relative">
+						<img class="img-fluid rounded-circle mx-auto mb-5"
+							src="https://img.freepik.com/premium-photo/portrait-man-wearing-sunglasses_1048944-17934341.jpg?semt=ais_hybrid">
+						<div class="btn-square bg-primary rounded-circle">
+							<i class="fa fa-quote-left text-white"></i>
+						</div>
+					</div>
+					<div class="testimonial-text text-center rounded p-4">
+						<p>"As a company, we are always looking for ways to reduce our environmental impact, and switching to solar
+							energy was the perfect solution. The team provided exceptional service and support throughout the entire
+							process."</p>
+						<h5 class="mb-1">Sandeep Mehta</h5>
+						<span class="fst-italic">Senior Architect, Bright Future Solar Systems</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer Start -->
+	<div id="myfooter"></div>
+	<!-- Footer End -->
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+	<!-- JavaScript Libraries -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/easing.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/counterup.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/lightbox.min.js"></script>
+	
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
+
+</body>
+</html>

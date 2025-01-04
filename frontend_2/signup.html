@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Logout</title>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+  </head>
+  <body>
+    <h1>Firebase Login & Logout</h1>
+
+    <!-- User Info -->
+    <div id="user-info" style="display: none">
+      <p>Welcome, <span id="user-name"></span>!</p>
+      <img
+        id="user-photo"
+        src=""
+        alt="User Photo"
+        style="width: 50px; height: 50px; border-radius: 50%"
+      />
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Login Button -->
+    <div id="login-btn">
+      <button onclick="login()">Login with Google</button>
+    </div>
+
+    <script>
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBNfVW_F6tTbTZSP4YUgHTUZeK86xPVac4",
+        authDomain: "green-energy-advisor-ai-7a0c3.firebaseapp.com",
+        projectId: "green-energy-advisor-ai-7a0c3",
+        storageBucket: "green-energy-advisor-ai-7a0c3.appspot.com",
+        messagingSenderId: "703379505970",
+        appId: "1:703379505970:web:3425574eb6b6ffc733cd2b",
+        measurementId: "G-6M8D3BSCW3",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+
+      // Check Authentication State
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          // User is logged in
+          document.getElementById("user-info").style.display = "block";
+          document.getElementById("login-btn").style.display = "none";
+          document.getElementById("user-name").innerText =
+            user.displayName || "Anonymous";
+          document.getElementById("user-photo").src =
+            user.photoURL || "default-avatar.png";
+        } else {
+          // User is logged out
+          document.getElementById("user-info").style.display = "none";
+          document.getElementById("login-btn").style.display = "block";
+        }
+      });
+
+      // Login Function
+      function login() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then((result) => {
+            console.log("User signed in:", result.user);
+          })
+          .catch((error) => {
+            console.error("Error during sign-in:", error.message);
+          });
+      }
+
+      // Logout Function
+      function logout() {
+        firebase
+          .auth()
+          .signOut()
+          .then(() => {
+            alert("User logged out successfully!");
+            console.log("User signed out.");
+          })
+          .catch((error) => {
+            console.error("Error during logout:", error.message);
+          });
+      }
+    </script>
+  </body>
+</html>

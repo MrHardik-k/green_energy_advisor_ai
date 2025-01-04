@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Radient future AI Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="css/all.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <link href="css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard ~ Radient Future Ai</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+      :root {
+        --primary-green: #2ecc71;
+        --secondary-green: #27ae60;
+        --dark-green: #16a085;
+      }
+
+      body {
+        font-family: "mullish", "Roboto";
+        background-color: #f4f6f7;
+      }
+
+      .sidebar {
+        min-height: calc(100vh - 4rem);
+      }
+
+      .dashboard-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .dashboard-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .progress-bar {
+        background: linear-gradient(to right, #2ecc71, #27ae60);
+      }
+
+      .gamification-badge {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.05);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Top Navigation -->
+    <!-- Navbar Start -->
+    <div id="mynavbar"></div>
+    <!-- Navbar End -->
+
+    <div class="flex">
+      <!-- Sidebar Navigation -->
+      <div class="w-64 bg-green-800 text-white sidebar p-6">
+        <div class="mb-8"></div>
+        <nav>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-3 rounded hover:bg-green-700 transition"
+              >
+                <i data-feather="home" class="mr-3"></i> Dashboard
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-3 rounded hover:bg-green-700 transition"
+              >
+                <i data-feather="zap" class="mr-3"></i> Recommendations
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-3 rounded hover:bg-green-700 transition"
+              >
+                <i data-feather="layers" class="mr-3"></i> 3D Simulation
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-3 rounded hover:bg-green-700 transition"
+              >
+                <i data-feather="trending-up" class="mr-3"></i> ROI Analysis
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Main Dashboard Content -->
+      <main class="flex-1 p-10 bg-gray-100">
+        <h1 class="text-3xl font-bold mb-8 text-green-800">Welcome, User!</h1>
+
+        <!-- Quick Overview Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+          <!-- Energy Consumption Card -->
+          <div class="dashboard-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-semibold text-green-800">
+                Energy Consumption
+              </h3>
+              <i data-feather="battery-charging" class="text-green-600"></i>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-green-700">456 kWh</p>
+              <p class="text-sm text-gray-500">This Month</p>
+            </div>
+            <div class="mt-4">
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  class="progress-bar h-2.5 rounded-full"
+                  style="width: 65%"
+                ></div>
+              </div>
+              <p class="text-sm text-gray-600 mt-2">65% of monthly target</p>
+            </div>
+          </div>
+
+          <!-- Savings Card -->
+          <div class="dashboard-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-semibold text-green-800">
+                Total Savings
+              </h3>
+              <i data-feather="dollar-sign" class="text-green-600"></i>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-green-700">$1,245</p>
+              <p class="text-sm text-gray-500">Lifetime Savings</p>
+            </div>
+            <div class="mt-4">
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div
+                  class="progress-bar h-2.5 rounded-full"
+                  style="width: 75%"
+                ></div>
+              </div>
+              <p class="text-sm text-gray-600 mt-2">75% above average</p>
+            </div>
+          </div>
+
+          <!-- Gamification Card -->
+          <div class="dashboard-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-semibold text-green-800">Solar Points</h3>
+              <i data-feather="award" class="text-green-600"></i>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold text-green-700">2,340</p>
+              <p class="text-sm text-gray-500">Total Points</p>
+            </div>
+            <div class="mt-4 flex justify-center">
+              <span
+                class="gamification-badge bg-yellow-400 text-white px-3 py-1 rounded-full text-sm"
+              >
+                🏆 Level Up!
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Charts and Insights -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Energy Consumption Chart -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-green-800 mb-4">
+              Monthly Energy Consumption
+            </h3>
+            <canvas id="energyChart"></canvas>
+          </div>
+
+          <!-- Savings Projection -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-green-800 mb-4">
+              Projected Annual Savings
+            </h3>
+            <canvas id="savingsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Recommendations Section -->
+        <section class="mt-10 bg-green-50 p-6 rounded-lg">
+          <h2 class="text-2xl font-bold text-green-800 mb-6">
+            Personalized Recommendations
+          </h2>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="font-semibold text-green-700 mb-2">
+                Solar Panel Upgrade
+              </h3>
+              <p class="text-sm text-gray-600">Potential savings: $320/year</p>
+              <button
+                class="mt-3 bg-green-600 text-white px-4 py-2 rounded text-sm hover:bg-green-700"
+              >
+                Learn More
+              </button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="font-semibold text-green-700 mb-2">Energy Storage</h3>
+              <p class="text-sm text-gray-600">Optimize your energy usage</p>
+              <button
+                class="mt-3 bg-green-600 text-white px-4 py-2 rounded text-sm hover:bg-green-700"
+              >
+                Explore
+              </button>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="font-semibold text-green-700 mb-2">
+                Smart Home Integration
+              </h3>
+              <p class="text-sm text-gray-600">Reduce consumption by 15%</p>
+              <button
+                class="mt-3 bg-green-600 text-white px-4 py-2 rounded text-sm hover:bg-green-700"
+              >
+                Configure
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- footer start  -->
+    <div id="myfooter"></div>
+    <!-- Footer -->
+    <script>
+      // Create an async function to load header and footer
+      async function loadContent() {
+        // Fetch the header and footer HTML
+        const headerResponse = await fetch("assets/navbar.html");
+        const footerResponse = await fetch("assets/footer.html");
+
+        // Get the text content of both
+        const headerContent = await headerResponse.text();
+        const footerContent = await footerResponse.text();
+
+        // Insert the content into the respective divs
+        document.getElementById("mynavbar").innerHTML = headerContent;
+        document.getElementById("myfooter").innerHTML = footerContent;
+      }
+
+      // Call the loadContent function when the page loads
+      loadContent();
+    </script>
+    <script>
+      // Energy Consumption Chart
+      var ctx = document.getElementById("energyChart").getContext("2d");
+      var energyChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+          datasets: [
+            {
+              label: "Energy Consumption (kWh)",
+              data: [400, 450, 380, 500, 420, 456],
+              borderColor: "#2ecc71",
+              backgroundColor: "rgba(46, 204, 113, 0.2)",
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      // Savings Projection Chart
+      var savingsCtx = document.getElementById("savingsChart").getContext("2d");
+      var savingsChart = new Chart(savingsCtx, {
+        type: "bar",
+        data: {
+          labels: ["Current", "Projected"],
+          datasets: [
+            {
+              label: "Annual Savings ($)",
+              data: [1245, 2500, 3000, 4000],
+              backgroundColor: ["#27ae60", "#2ecc71"],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      // Initialize Feather Icons
+
+      feather.replace();
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/easing.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/counterup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

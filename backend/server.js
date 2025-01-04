@@ -4,6 +4,7 @@ import authRouter from "./routes/auth.routes.js";
 import { connectDB } from "./config/db.js";
 import cors from "cors";
 import energyConsumptionRouter from "./routes/energy_consumption.routes.js";
+import co2FootprintRoute from "./routes/co2_footprint.routes.js";
 
 configDotenv();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use(
 app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/enegy_consumption", energyConsumptionRouter);
+app.use("/api/carbon_footprint", co2FootprintRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
